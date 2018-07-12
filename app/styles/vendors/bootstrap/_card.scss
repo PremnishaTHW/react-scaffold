@@ -2,6 +2,32 @@
 // Base styles
 //
 
+.card:hover .card-img-top{
+	opacity: 0.3;
+}
+
+.card:hover .card-img-top-overlay{
+	opacity: 1;
+}
+
+.card-img-top-overlay{
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.fav-button{
+	background-color: #4CAF50;
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -126,8 +152,14 @@
 
 // Card image caps
 .card-img-top {
+	height: 400px;
+	padding: 10px;
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
   @include border-top-radius($card-inner-border-radius);
+}
+
+.card-img-top:hover img{
+	opacity: 0.3;
 }
 
 .card-img-bottom {
